@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Attendance Management</title>
+
+<link rel="stylesheet" href="css/attendance.css">
+
+</head>
+
+<body>
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+    <h2 id="sidebarTitle">EMS</h2>
+
+    <ul>
+
+        <li>
+            <a href="dashboard.html">
+                🏠 Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="employees.html">
+                👨 Employees
+            </a>
+        </li>
+
+        <li>
+            <a class="active" href="attendance.html">
+                📅 Attendance
+            </a>
+        </li>
+
+        <li>
+            <a href="reports.html">
+                📊 Reports
+            </a>
+        </li>
+
+        <li>
+            <a href="settings.html">
+                ⚙ Settings
+            </a>
+        </li>
+
+        <li>
+            <a href="index.html">
+                🚪 Logout
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+    <!-- Header -->
+
+    <div class="header">
+
+        <div>
+
+            <h2 id="companyTitle">
+                Employee Attendance System
+            </h2>
+
+            <h1>
+                Attendance Management
+            </h1>
+
+            <p id="todayDate"></p>
+
+        </div>
+
+    </div>
+
+    <!-- Attendance Card -->
+
+    <div class="attendance-card">
+
+        <div class="top-bar">
+
+            <div>
+
+                <label>Select Date</label>
+
+                <input
+                    type="date"
+                    id="attendanceDate"
+                >
+
+            </div>
+
+            <button
+                class="save-btn"
+                onclick="saveAttendance()">
+
+                💾 Save Attendance
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Table -->
+
+    <div class="table-box">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Name</th>
+
+                    <th>Department</th>
+
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="attendanceBody">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- Footer -->
+
+    <div class="dashboard-footer">
+
+        © 2026 Employee Attendance System |
+        Developed by Sumit Singh
+
+    </div>
+
+</div>
+
+<script src="js/attendance.js"></script>
+
+</body>
+
+</html>

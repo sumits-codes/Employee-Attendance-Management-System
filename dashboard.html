@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+
+<!-- ================= Sidebar ================= -->
+
+<div class="sidebar">
+
+    <h2 id="sidebarTitle">EMS</h2>
+
+    <ul>
+
+        <li><a class="active" href="dashboard.html">🏠 Dashboard</a></li>
+
+        <li><a href="employees.html">👨 Employees</a></li>
+
+        <li><a href="attendance.html">📅 Attendance</a></li>
+
+        <li><a href="reports.html">📊 Reports</a></li>
+
+        <li><a href="settings.html">⚙ Settings</a></li>
+
+        <li><a href="#" onclick="logout()">🚪 Logout</a></li>
+
+    </ul>
+
+</div>
+
+<!-- ================= Main ================= -->
+
+<div class="main">
+
+    <!-- Header -->
+
+    <div class="header">
+
+        <div class="header-left">
+
+            <h2 id="companyTitle">Employee Attendance System</h2>
+
+            <h1>Dashboard</h1>
+
+            <p id="todayDate"></p>
+
+        </div>
+
+        <button class="logout" onclick="logout()">
+
+            Logout
+
+        </button>
+
+    </div>
+
+    <!-- Cards -->
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>Total Employees</h3>
+
+            <h1 id="totalEmployees">0</h1>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Present</h3>
+
+            <h1 id="presentCount">0</h1>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Absent</h3>
+
+            <h1 id="absentCount">0</h1>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Leave</h3>
+
+            <h1 id="leaveCount">0</h1>
+
+        </div>
+
+    </div>
+
+    <!-- Charts -->
+
+    <div class="charts">
+
+        <div class="chart-card">
+
+            <h2>Attendance Overview</h2>
+
+            <canvas id="attendanceChart"></canvas>
+
+        </div>
+
+        <div class="chart-card">
+
+            <h2>Department Distribution</h2>
+
+            <canvas id="departmentChart"></canvas>
+
+        </div>
+
+    </div>
+
+    <!-- Employee Table -->
+
+    <div class="table-box">
+
+        <div class="table-header">
+
+            <h2>Employee List</h2>
+
+            <span id="employeeCountBadge">0 Employees</span>
+
+        </div>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Name</th>
+
+                    <th>Department</th>
+
+                    <th>Email</th>
+
+                    <th>Phone</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="employeeTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- Footer -->
+
+    <div class="dashboard-footer">
+
+        <p>
+
+            © 2026 Employee Attendance System | Built with HTML, CSS & JavaScript
+
+        </p>
+
+    </div>
+
+</div>
+
+<!-- Chart.js -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Dashboard JS -->
+
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

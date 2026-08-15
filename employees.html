@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Employee Management</title>
+
+<link rel="stylesheet" href="css/employee.css">
+
+</head>
+
+<body>
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+    <h2 id="sidebarTitle">EMS</h2>
+
+    <ul>
+
+        <li><a href="dashboard.html">🏠 Dashboard</a></li>
+
+        <li><a class="active" href="employees.html">👨 Employees</a></li>
+
+        <li><a href="attendance.html">📅 Attendance</a></li>
+
+        <li><a href="reports.html">📊 Reports</a></li>
+
+        <li><a href="settings.html">⚙ Settings</a></li>
+
+        <li>
+            <a href="#" onclick="logout()">
+                🚪 Logout
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+    <!-- Header -->
+
+    <div class="header">
+
+        <div>
+
+            <h2 id="companyTitle">
+                Employee Attendance System
+            </h2>
+
+            <h1>Employee Management</h1>
+
+        </div>
+
+    </div>
+
+    <!-- Employee Form -->
+
+    <div class="form-box">
+
+        <h3>Add Employee</h3>
+
+        <div class="form-grid">
+
+            <input
+                type="text"
+                id="empId"
+                placeholder="Employee ID">
+
+            <input
+                type="text"
+                id="empName"
+                placeholder="Employee Name">
+
+            <input
+                type="text"
+                id="department"
+                placeholder="Department">
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Email Address">
+
+            <input
+                type="text"
+                id="phone"
+                placeholder="Phone Number">
+
+            <!-- Employee Photo -->
+
+            <div class="photo-upload">
+
+                <label>
+
+                    Employee Photo
+
+                </label>
+
+                <input
+                    type="file"
+                    id="photo"
+                    accept="image/*">
+
+            </div>
+
+        </div>
+
+        <div class="button-group">
+
+            <button
+                id="addBtn"
+                onclick="addEmployee()">
+
+                ➕ Add Employee
+
+            </button>
+
+            <button
+                id="cancelBtn"
+                onclick="cancelEdit()">
+
+                ❌ Cancel
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Search + Export -->
+
+    <div class="top-bar">
+
+        <input
+            type="text"
+            id="search"
+            class="search-box"
+            placeholder="🔍 Search Employee..."
+            onkeyup="searchEmployee()">
+
+        <button
+            class="excel-btn"
+            onclick="exportExcel()">
+
+            📊 Export Excel
+
+        </button>
+
+    </div>
+
+    <!-- Employee Table -->
+
+    <div class="table-box">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Photo</th>
+
+                    <th>ID</th>
+
+                    <th>Name</th>
+
+                    <th>Department</th>
+
+                    <th>Email</th>
+
+                    <th>Phone</th>
+
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="tableBody">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script>
+
+const companyName = localStorage.getItem("companyName");
+
+if (companyName && companyName.trim() !== "") {
+
+    document.getElementById("companyTitle").innerHTML = companyName;
+
+    document.getElementById("sidebarTitle").innerHTML = companyName;
+
+}
+
+</script>
+
+<!-- Excel Library -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+<!-- Employee JS -->
+
+<script src="js/employee.js"></script>
+
+</body>
+
+</html>
